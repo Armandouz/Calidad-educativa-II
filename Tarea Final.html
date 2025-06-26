@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Calidad Educativa en el Siglo XXI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+                max-height: 50vh;
+            }
+        }
+        .flowchart-step {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+        }
+        .flowchart-step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 1.1rem;
+            top: 1.2rem;
+            width: 2px;
+            height: 100%;
+            background-color: #F47B20;
+        }
+        .flowchart-dot {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-8 md:my-12">
+            <img src="Galileo.png" alt="Logo Universidad Galileo" class="mx-auto mb-4 w-48 md:w-64 h-auto rounded-lg shadow-md">
+            <h1 class="text-4xl md:text-6xl font-black text-[#00A9E0] tracking-tight">La Calidad Educativa en el Siglo XXI</h1>
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-700 mt-2">Desafíos y Oportunidades para la Formación del Estudiante en Guatemala</h2>
+           
+        </header>
+
+        <main>
+            <section id="definicion" class="my-12">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 max-w-4xl mx-auto border-l-8 border-[#00A9E0]">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">💡 ¿Qué es la Calidad Educativa Hoy?</h3>
+                    <p class="text-lg text-gray-700">La calidad educativa en el siglo XXI trasciende la mera transmisión de conocimientos. Se enfoca en un <strong class="text-[#00A9E0]">proceso holístico que garantiza el desarrollo integral del estudiante</strong>, preparándolo para los desafíos de un mundo en constante cambio. Implica un enfoque inclusivo, equitativo y relevante, que fomenta la autonomía, el pensamiento crítico y las habilidades para el aprendizaje a lo largo de la vida, asegurando que cada individuo alcance su máximo potencial.</p>
+                </div>
+            </section>
+
+            <section id="caracteristicas" class="my-12 md:my-20">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">✨ 10 Pilares de una Educación de Calidad</h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Estos diez pilares interconectados definen una educación de calidad. El siguiente gráfico muestra cómo cada área contribuye de manera equilibrada a un sistema educativo robusto y efectivo.</p>
+                    <div class="chart-container">
+                        <canvas id="caracteristicasChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impacto" class="my-12 md:my-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">🚀 Pilares de Desarrollo del Estudiante</h3>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">La educación de calidad impulsa el crecimiento integral del estudiante a través de estas capacidades fundamentales, preparando para los desafíos del mundo actual.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border-b-4 border-[#00A9E0] transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-5xl mb-4 text-[#00A9E0]">🧠</span>
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">Pensamiento Crítico</h4>
+                        <p class="text-base text-gray-600">Capacidad de analizar información objetivamente, evaluar argumentos y tomar decisiones informadas, esencial para discernir en la era de la información.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border-b-4 border-[#F47B20] transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-5xl mb-4 text-[#F47B20]">🤝</span>
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">Habilidades Blandas</h4>
+                        <p class="text-base text-gray-600">Cualidades interpersonales y personales como la comunicación efectiva, empatía, adaptabilidad y resiliencia, cruciales para la interacción y el éxito profesional.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border-b-4 border-[#993399] transform hover:scale-105 transition-transform duration-300">
+                        <span class="text-5xl mb-4 text-[#993399]">🛠️</span>
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">Competencias</h4>
+                        <p class="text-base text-gray-600">Capacidades integradas que permiten aplicar conocimientos y habilidades en diversos contextos y resolver problemas complejos, fomentando la innovación y colaboración.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="desafios-guatemala" class="my-12 md:my-20">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">📉 Desafíos Clave del Sistema Educativo Guatemalteco</h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Guatemala enfrenta retos significativos que impactan la calidad educativa, desde la precariedad estructural hasta las desigualdades y la formación docente, según el análisis del Dr. Marco Castillo.</p>
+                    <div class="chart-container h-[400px] md:h-[500px]">
+                        <canvas id="desafiosChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="propuestas" class="my-12 md:my-20">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">🎯 Hoja de Ruta para la Mejora Continua</h3>
+                    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Mejorar la calidad educativa requiere acciones estratégicas y sostenidas. A continuación se presentan las prácticas clave recomendadas por expertos para transformar los sistemas educativos.</p>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="flowchart-step">
+                            <div class="flowchart-dot bg-[#00A9E0] text-white">1</div>
+                            <h4 class="font-bold text-lg mb-1">Formación Docente Continua</h4>
+                            <p class="text-gray-600">Invertir en el desarrollo profesional para capacitar a los educadores en metodologías innovadoras y tecnologías emergentes.</p>
+                        </div>
+                        <div class="flowchart-step">
+                            <div class="flowchart-dot bg-[#F47B20] text-white">2</div>
+                            <h4 class="font-bold text-lg mb-1">Currículos Flexibles y Actualizados</h4>
+                            <p class="text-gray-600">Diseñar planes de estudio relevantes que respondan a las demandas del presente y preparen para el futuro, priorizando competencias transversales.</p>
+                        </div>
+                        <div class="flowchart-step">
+                            <div class="flowchart-dot bg-[#993399] text-white">3</div>
+                            <h4 class="font-bold text-lg mb-1">Infraestructura y Recursos Tecnológicos</h4>
+                            <p class="text-gray-600">Asegurar ambientes de aprendizaje adecuados y acceso equitativo a herramientas digitales para enriquecer la enseñanza.</p>
+                        </div>
+                        <div class="flowchart-step">
+                           <div class="flowchart-dot bg-[#009966] text-white">4</div>
+                            <h4 class="font-bold text-lg mb-1">Fomento de la Participación Comunitaria</h4>
+                            <p class="text-gray-600">Integrar activamente a padres, madres y la comunidad en el proceso educativo para crear redes de apoyo sólidas.</p>
+                        </div>
+                        <div class="flowchart-step">
+                            <div class="flowchart-dot bg-[#FDB913] text-gray-800">5</div>
+                            <h4 class="font-bold text-lg mb-1">Investigación y Monitoreo</h4>
+                            <p class="text-gray-600">Implementar sistemas de evaluación que permitan identificar áreas de mejora y adaptar las políticas educativas basadas en evidencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conclusion" class="my-12 md:my-20">
+                 <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">📝 Conclusión</h3>
+                    <blockquote class="text-center text-lg text-gray-700 italic border-l-4 border-[#00A9E0] pl-6">
+                        "La calidad educativa en el siglo XXI es más que un ideal; es una necesidad imperante para la formación de ciudadanos capaces de enfrentar los desafíos de un mundo dinámico. Al trascender el enfoque tradicional y abrazar un modelo que promueve el desarrollo integral, el pensamiento crítico y las habilidades blandas, aseguramos que cada estudiante no solo adquiera conocimientos, sino que también desarrolle las herramientas necesarias para innovar, colaborar y construir un futuro próspero y equitativo. Invertir en educación de calidad es invertir en el capital humano más valioso de nuestra sociedad, garantizando un progreso sostenible y una ciudadanía plena."
+                    </blockquote>
+                </div>
+            </section>
+            
+            <section id="referencias" class="my-12 md:my-20 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">📚 Referencias Académicas</h3>
+                <div class="text-sm text-gray-600 max-w-3xl mx-auto space-y-2">
+                    <p><strong>UNESCO.</strong> (2015). <em>Educación 2030: Hacia una educación inclusiva y equitativa de calidad y un aprendizaje a lo largo de la vida para todos.</em> UNESCO.</p>
+                    <p><strong>OCDE.</strong> (2018). <em>El futuro de la educación y las habilidades: Educación 2030.</em> OECD Publishing.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 py-6 border-t border-gray-300 text-center text-xs text-gray-500">
+            <p><strong>Curso:</strong> Calidad Educativa II</p>
+            <p><strong>Docente:</strong> Ph.D. Marco Castillo</p>
+            <p><strong>Fecha de Entrega:</strong> 27/06/2025</p>
+            <p><strong>Carrera:</strong> Maestría en Planeamiento y Gerencia Educativa</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapText(text) {
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > 16 && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const ctxCaracteristicas = document.getElementById('caracteristicasChart').getContext('2d');
+        const rawLabelsCaracteristicas = [
+            'Relevancia y Pertinencia',
+            'Inclusividad y Equidad',
+            'Foco en el Estudiante',
+            'Desarrollo Integral',
+            'Docentes Calificados y Comprometidos',
+            'Uso Estratégico de la Tecnología',
+            'Evaluación Formativa y para el Aprendizaje',
+            'Aprendizaje Personalizado',
+            'Colaboración y Trabajo en Equipo',
+            'Ciudadanía Global y Sostenibilidad'
+        ];
+
+        const processedLabelsCaracteristicas = rawLabelsCaracteristicas.map(label => {
+            if (label.length > 16) {
+                return wrapText(label);
+            }
+            return label;
+        });
+
+        const caracteristicasChart = new Chart(ctxCaracteristicas, {
+            type: 'radar',
+            data: {
+                labels: processedLabelsCaracteristicas,
+                datasets: [{
+                    label: 'Nivel de Importancia',
+                    data: [10, 9, 9, 10, 9, 8, 10, 9, 10, 8],
+                    backgroundColor: 'rgba(0, 169, 224, 0.2)',
+                    borderColor: 'rgba(0, 169, 224, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(0, 169, 224, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(0, 169, 224, 1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            color: '#333'
+                        },
+                        ticks: {
+                            display: false,
+                            stepSize: 2
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctxDesafios = document.getElementById('desafiosChart').getContext('2d');
+        const rawLabelsDesafios = [
+            'Precariedad Estructural del Sistema',
+            'Baja Cobertura Media y Superior',
+            'Altas Tasas de Deserción Escolar',
+            'Desigualdad Urbano-Rural',
+            'Insuficiente Formación Docente',
+            'Modelos Pedagógicos Bancarios',
+            'Débil Articulación Currículo-Contexto',
+            'Brecha Digital y Tecnológica'
+        ];
+
+        const processedLabelsDesafios = rawLabelsDesafios.map(label => {
+            if (label.length > 20) {
+                return wrapText(label);
+            }
+            return label;
+        });
+
+        const desafiosChart = new Chart(ctxDesafios, {
+            type: 'bar',
+            data: {
+                labels: processedLabelsDesafios,
+                datasets: [{
+                    label: 'Nivel de Desafío (escala ilustrativa)',
+                    data: [85, 75, 70, 90, 80, 65, 78, 72],
+                    backgroundColor: [
+                        'rgba(244, 123, 32, 0.7)',
+                        'rgba(153, 51, 153, 0.7)',
+                        'rgba(0, 153, 102, 0.7)',
+                        'rgba(253, 185, 19, 0.7)',
+                        'rgba(0, 169, 224, 0.7)',
+                        'rgba(244, 123, 32, 0.7)',
+                        'rgba(153, 51, 153, 0.7)',
+                        'rgba(0, 153, 102, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(244, 123, 32, 1)',
+                        'rgba(153, 51, 153, 1)',
+                        'rgba(0, 153, 102, 1)',
+                        'rgba(253, 185, 19, 1)',
+                        'rgba(0, 169, 224, 1)',
+                        'rgba(244, 123, 32, 1)',
+                        'rgba(153, 51, 153, 1)',
+                        'rgba(0, 153, 102, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: '#333'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#333'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            color: '#333'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.raw;
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
